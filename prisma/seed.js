@@ -4,6 +4,7 @@ const seed = async () => {
   for (let i = 0; i < 10; i++) {
     employees.push({ id: i, name: `Employee ${i}` });
   }
+  await prisma.employee.createMany({ data: employees });
 };
 seed()
   .then(async () => await prisma.$disconnect())
