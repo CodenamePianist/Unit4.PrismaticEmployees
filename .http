@@ -2,4 +2,8 @@
 
 @host = http://localhost:3000
 
+### GET / endpoint
 GET {{host}}/
+
+### GET /employees endpoint
+GET {{host}}/employees
