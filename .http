@@ -7,3 +7,11 @@ GET {{host}}/
 
 ### GET /employees endpoint
 GET {{host}}/employees
+
+### POST /employees endpoint
+POST {{host}}/employees/
+Content-Type: application/json
+
+{
+    "name": "Alicia Keys"
+}
