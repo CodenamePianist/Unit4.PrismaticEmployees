@@ -4,6 +4,10 @@ const PORT = 3000;
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.json("Welcome to the Prismatic Employees API.");
+});
+
 app.use("/employees", require("./api/employees"));
 
 app.use((req, res, next) => {
