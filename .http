@@ -53,3 +53,9 @@ Content-Type: application/json
 {
     "name": ""
 }
+
+### DELETE Employee has been deleted
+DELETE {{host}}/employees/6
+
+### DELETE Employee cannot be deleted
+DELETE {{host}}/employees/400
