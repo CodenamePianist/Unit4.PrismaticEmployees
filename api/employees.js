@@ -28,3 +28,47 @@ router.post("/", async (req, res, next) => {
     next(error);
   }
 });
+
+router.get("/:id", async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const employee = await prisma.employee.findUnique({ where: { id: +id } });
+    if (employee) {
+      res.json(employee);
+    } else {
+      next({ status: 404, message: `Employee with id ${id} does not exist.` });
+    }
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.put("/:id", async (req, res, next) => {
+  const { id } = req.params;
+  const { name } = req.body;
+
+  if (!name) {
+    return next({
+      status: 400,
+      message: "A name must be provided.",
+    });
+  }
+
+  try {
+    const employee = await prisma.employee.findUnique({ where: { id: +id } });
+    if (!employee) {
+      return next({
+        status: 404,
+        message: `Employee with id ${id} does not exist.`,
+      });
+    }
+
+    const updatedEmployee = await prisma.employee.update({
+      where: { id: +id },
+      data: { name },
+    });
+    res.json(updatedEmployee);
+  } catch (error) {
+    next(error);
+  }
+});

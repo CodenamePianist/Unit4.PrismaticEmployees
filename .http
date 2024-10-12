@@ -23,3 +23,33 @@ Content-Type: application/json
 {
     "name": ""
 }
+
+### GET find a specific employee
+GET {{host}}/employees/5
+
+### GET employee does not exist
+GET {{host}}/employees/80
+
+### PUT update an employee
+PUT {{host}}/employees/4
+Content-Type: application/json
+
+{
+    "name": "Sailor Mars"
+}
+
+### PUT employee does not exist
+PUT {{host}}/employees/200
+Content-Type: application/json
+
+{
+    "name": "Saywecanfly"
+}
+
+### PUT Name not correctly provided
+PUT {{host}}/employees/8
+Content-Type: application/json
+
+{
+    "name": ""
+}
