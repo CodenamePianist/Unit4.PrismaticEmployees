@@ -9,9 +9,17 @@ GET {{host}}/
 GET {{host}}/employees
 
 ### POST /employees endpoint
-POST {{host}}/employees/
+POST {{host}}/employees
 Content-Type: application/json
 
 {
     "name": "Yekaterina Petrovna Zamolodchikova"
+}
+
+### POST call failed
+POST {{host}}/employees
+Content-Type: application/json
+
+{
+    "name": ""
 }
