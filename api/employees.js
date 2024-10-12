@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 module.exports = router;
 
-const prisma = require("..");
+const prisma = require("../prisma");
 
 router.get("/", async (req, res, next) => {
   try {

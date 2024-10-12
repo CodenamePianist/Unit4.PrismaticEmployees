@@ -1,4 +1,4 @@
-const prisma = require("..");
+const prisma = require(".");
 const seed = async () => {
   const employees = [];
   for (let i = 0; i < 10; i++) {
