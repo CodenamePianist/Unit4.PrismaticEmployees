@@ -86,7 +86,7 @@ router.delete("/:id", async (req, res, next) => {
     }
 
     await prisma.employee.delete({ where: { id: +id } });
-    res.sendStatus(201);
+    res.sendStatus(204);
   } catch (error) {
     next(error);
   }
